@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}
+<!--!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Home Page</title>
+</head>
+<body-->
+<div class="content-section">
+    <div class="media">
+        <img class="rounded-circle account-img" src="{{ image_file }}">
+        <div class="media-body">
+            <h2 class="account-heading">{{ current_user.username }}</h2>
+            <p class="text-secondary">{{ current_user.email }}</p>
+
+        </div>
+    </div>
+    <div><!-- class="container" -->
+        <br>
+        <h1>Oracle Invoice</h1>
+        <br>
+        <!--p>Click <a href="/logout">here</a> to logout.</p-->
+        <br>
+        <!-- p><strong>Scores for {{stud_name}}</strong>:</p -->
+        <p><strong>Oracle Invoice: {{ oracle[stud_name] }} </strong></p>
+       <br>
+        
+        <br>
+        
+    </div>
+</div>
+    
+<!--/body>
+</html-->
+{% endblock content %}
+

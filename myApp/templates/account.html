@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block content %}
+    <!--h1>{{ current_user.username }}</h1-->
+    <div class="content-section">
+        <div class="media">
+            <img class="rounded-circle account-img" src="{{ image_file }}">
+            <div class="media-body">
+                <h2 class="account-heading">{{ current_user.username }}</h2>
+                <p class="text-secondary">{{ current_user.email }}</p>
+
+            </div>
+        </div>
+        <div>
+            <br>
+
+            <legend class="border-bottom mb-4">Mock Test Scores</legend>
+            
+            <!--p><a href=""><button class=grey style="height:60px;width:100px;">Apr 23 Mock Test</button></a></p-->
+            <p><a href="{{ url_for('scores1') }}"><button class=grey style="height:60px;width:120px;">Apr 29 Mock Test pt.1</button></a></p>
+            <p><a href="{{ url_for('scores2') }}"><button class=grey style="height:60px;width:120px;">Apr 29 Mock Test pt.2</button></a></p>
+            <p><a href="{{ url_for('invoices1') }}"><button class=grey style="height:60px;width:120px;">Oracle Invoice</button></a></p>
+            
+            <br><br>
+        </div>
+        <form method="POST" action="" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Account Info</legend>
+                <legend class="mb-4">Students cannot currently change username or email</legend>
+                <!-- Students CANNOT change email OR password in this version of the app-->
+               
+                <div class="form-group">
+                    {{ form.username.label(class="form-control-label") }}
+                    {% if form.username.errors %}
+                        {{ form.username(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.username.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.username(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                
+                
+                <div class="form-group">
+                    {{ form.picture.label() }}
+                    {{ form.picture(class="form-control-file") }}
+                    {% if form.picture.errors %}
+                        {% for error in form.picture.errors %}
+                            <span class="text-danger">{{ error }}</span><br>
+                        {% endfor %}
+                   
+                 
+                    {% endif %}
+                </div>
+            </fieldset>
+
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+        
+    </div>
+{% endblock content %}
