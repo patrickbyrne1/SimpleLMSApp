@@ -1,0 +1,46 @@
+
+<!DOCTYPE>
+<html>
+<head>
+<title>Tip Calc</title>
+
+<script>
+  window.onload = function()
+  {
+      document.getElementById('btnCalculate').addEventListener('click', calculateTip, false);
+  }
+  function calculateTip()
+  {
+      var billAmount = document.getElementById('billAmount').value;
+	  var tip1 = (billAmount * .15).toFixed(2);
+	  var tip2 = (billAmount * .175).toFixed(2);
+	  var tip3 = (billAmount * .2).toFixed(2);
+	  
+	  var out = "";
+	  
+	  out += "15%: " + tip1;
+	  out += "<br/>17.5%: " + tip2;
+	  out += "<br/>20%: " + tip3;
+	  
+	  document.getElementById('result').innerHTML = out;
+   }
+
+</script>
+
+</head>
+
+
+<body>
+  <div id="container">
+    <input type="number" placeholder="Bill Amount" id="billAmount" />
+	<button id="btnCalculate">Calculate Tip</button>
+	<div id="result"></div>
+  </div>
+  
+
+
+
+
+
+</body>
+</html>

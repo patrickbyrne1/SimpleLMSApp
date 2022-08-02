@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color:black;
+            color:white;
+            text-align:center;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+    </style>
+
+</head>
+<body>
+   
+    <h1>Get Tomorrow's Wordle Word</h1>
+   <button id="word" name={{ data }} onclick="get_word()">Click me!</button>
+   
+   <script> 
+
+        function do_it() {
+            stop = confirm("You sure?");
+            if(!stop)
+                alert("Chicken!!");
+                return;
+            get_word();
+        }
+
+        function get_word() {
+            var word = document.getElementById("word").getAttribute("name");
+            console.log(word);
+            alert("Tomorrow's word is " + word);
+        }
+    </script>
+</body>
+</html>
